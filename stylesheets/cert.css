@@ -1,0 +1,23 @@
+.canva {
+    background:radial-gradient(ellipse, white 80%,rgb(247, 147, 16) 20%);
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    border-style: solid;
+    margin-left: 300px;
+    width: 1200px;
+    height: 800px;
+    border-color: coral;
+    /* background: linear-gradient(to top right, white 90%, yellow 10%); */
+
+
+}
+
+/* canvas {
+    border-style: solid;
+    margin-left: 300px;
+    width: 1200px;
+    height: 800px;
+    border-color: coral;
+} */
