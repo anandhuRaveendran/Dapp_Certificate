@@ -1,65 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CERTIFICATE FORM </title>
-    <link rel="stylesheet" href="../stylesheets/styles.css">
-    <ul >
-        <li class="active"><a href="file:///home/anandu/KBA/Dapp_Certificate/screens/dappHome.html">HOME</a></li>
-        <li><a>ISSUE CERTIFICATE</a></li>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <ul class="text-end flex flex-row-reverse  ">
+        <li class=" rounded-lg border-sky-950 bg-yellow-200 mr-6 mt-2"><a class="m-2"  href="dappHome.html">HOME</a></li>
+        <li class=" rounded-lg border-sky-950 bg-sky-300  border-x-emerald-200 mr-2 mt-2"><a class="m-2"
+                href="cform.html">ISSUE CERTIFICATE</a></li>
     </ul>
 </head>
-<body >
 
-    <h2 style="text-align: center;">Candidate Information Form</h2>
-    
-    <form action="file:///home/anandu/KBA/Dapp_Certificate/screens/cfinal.html" method="post" style="margin: 10%;background-color: rgb(242, 248, 247);height: 40%;">
-        <h3>Issue New Certificate</h3>
-        <label for="course">Select Course:</label><br>
-        <select id="course" name="course">
-            <option value="course1">BlockChain Architect Course</option>
-            <option value="course2">PCB</option>
-            <option value="course3">Cyber Security</option>
+<body class="bg-gray-100">
+
+    <h2 class="text-center mt-8 mb-4 text-3xl font-bold">Candidate Information Form</h2>
+
+    <form action="cfinal.html" method="post" class="mx-auto max-w-md bg-white p-8 rounded-lg shadow-lg " name="cdata">
+        <h3 class="text-lg font-semibold mb-4">Issue New Certificate</h3>
+        <label for="course" class="block mb-2">Select Course:</label>
+        <select id="course" name="course" class="w-full border border-gray-300 rounded-md py-2 px-3 mb-4">
+            <option value="BlockChain Architect Course">BlockChain Architect Course</option>
+            <option value="PCB">PCB</option>
+            <option value="Cyber Security">Cyber Security</option>
         </select>
-        <br><br>
-    
-        <label for="candidate_name">Candidate Name:</label><br>
-        <input type="text" id="candidate_name" name="candidate_name">
-        <br><br>
-    
-        <label for="candidate_id">Candidate ID:</label><br>
-        <input type="text" id="candidate_id" name="candidate_id" >
-        <br><br>
-    
-        <label for="grade">Select Grade:</label><br>
-        <select id="grade" name="grade">
+
+        <label for="candidate_name" class="block mb-2">Candidate Name:</label>
+        <input type="text" id="candidate_name" name="candidate_name"
+            class="w-full border border-gray-300 rounded-md py-2 px-3 mb-4">
+
+        <label for="candidate_id" class="block mb-2">Candidate ID:</label>
+        <input type="text" id="candidate_id" name="candidate_id"
+            class="w-full border border-gray-300 rounded-md py-2 px-3 mb-4">
+
+        <label for="grade" class="block mb-2">Select Grade:</label>
+        <select id="grade" name="grade" class="w-full border border-gray-300 rounded-md py-2 px-3 mb-4">
             <option value="A+">A+</option>
             <option value="A">A</option>
-
             <option value="B+">B+</option>
             <option value="B">B</option>
-
             <option value="C+">C+</option>
             <option value="C">C</option>
-
             <option value="D+">D+</option>
             <option value="D">D</option>
-            
             <option value="F">F</option>
         </select>
-        <br><br>
-    
-        <label for="gender">Select Gender:</label><br>
-        <select id="gender" name="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select>
-        <br><br>
-    
-        <button style="width: 300px;height: 50px;background-color: aqua;border-radius: 20px;font-family: 'Times New Roman', Times, serif;">ISSUE CERTIFICATE</button>
+
+
+        <button type="submit"
+            class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" onclick="collect()">ISSUE
+            CERTIFICATE</button>
     </form>
-    
-    </body>
+<script>
+    function collect(){
+        let course=document.getElementById("course").value ;
+        let name=document.getElementById("candidate_name").value ;
+        let candidate_id=document.getElementById("candidate_id").value ;
+        let grade=document.getElementById("grade").value ;
+        localStorage.setItem("id",candidate_id);
+        localStorage.setItem("course",course);
+        localStorage.setItem("name",name);
+        localStorage.setItem("grade",grade);
+        let x=localStorage.getItem("id")
+        console.log(localStorage)
+
+
+        console.log("Course= ",course ,"\n","Name= ",name ,"\n","Candidate ID= ",candidate_id ,"\n","Grade= ",grade ,"\n")
+
+
+
+
+    }
+   
+</script>
+</body>
+
 </html>

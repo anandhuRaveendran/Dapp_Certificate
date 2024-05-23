@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dapp HOME</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <ul >
-        <li class="active"><a >HOME</a></li>
-        <li><a href="file:///home/anandu/KBA/Dapp_Certificate/screens/cform.html">ISSUE CERTIFICATE</a></li>
+    <ul class="text-end flex flex-row-reverse  ">
+        <li class=" rounded-lg border-sky-950 bg-yellow-200 mr-6 mt-2"><a class="m-2">HOME</a></li>
+        <li class=" rounded-lg border-sky-950 bg-sky-300  border-x-emerald-200 mr-2 mt-2"><a class="m-2"
+                href="cform.html">ISSUE CERTIFICATE</a></li>
     </ul>
 </head>
-<body style="background-color: azure;">
-    <div style="margin-top: 100px;text-align: center;font-size: 50px;">
-        <a >CERTIFICATE DAPP</a>
+
+<body class="bg-gray-100">
+    <script>
+        localStorage.setItem("id", "123467");
+        localStorage.setItem("course", "Blockchain Architect");
+        localStorage.setItem("name", "Anandu Raveendran");
+        localStorage.setItem("grade", "S");
+        function redirect(){
+            window.location.href="cfinal.html";
+        }
+    </script>
+    <div class="mt-[100px] text-center text-6xl">
+        <a>CERTIFICATE DAPP</a>
     </div>
-    <div class="login">
+    <div class="ml-[600px]">
         <img src="../images/programmer.png">
-        
+
     </div>
-    <div style="flex-direction: column;">
-    <input type="text" placeholder="Enter your CERTIFICATE ID to View" style="width: 400px;height: 50px;margin-left: 600px;">
-    <button style="width: 100px;height: 50px;background-color: aqua;">SEARCH</button></div>
+    <div class="flex-col">
+        <input type="text" placeholder="Enter your CERTIFICATE ID to View" class="w-[400px] h-[50px] ml-[600px]">
+        <button class="w-[100px] h-[50px] bg-indigo-500 text-white" onclick="redirect()">SEARCH</button>
+    </div>
 </body>
+
 </html>

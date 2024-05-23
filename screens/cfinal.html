@@ -5,38 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificate</title>
-    <link rel="stylesheet" href="../stylesheets/cert.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 
+    <ul  class="text-end flex flex-row-reverse  "  >
+        <li class=" rounded-lg border-sky-950 bg-yellow-200 mr-6 mt-2"><button   class="m-2" onclick="printing()">PRINT</button></li>
+        <!-- <li class=" rounded-lg border-sky-950 bg-sky-300  border-x-emerald-200 mr-2 mt-2"><a class="m-2" href="cform.html">ISSUE CERTIFICATE</a></li> -->
+    </ul>
 </head>
 
-<body>
+<body class="bg-gray-100">
+
     <div>
 
-        <h1 style="text-align: center;">KERALA BLOCKCHAIN ACADEMY</h1>
-        <div style="margin-top: 10px;" class="canva">
+        <h1 class="text-center mt-8 mb-4 text-3xl font-bold">KERALA BLOCKCHAIN ACADEMY</h1>
+        <div class="canva mt-10">
 
-            <img src="../images/sidebg.png" style="height:150px;width:1200px;">
-            <div style="margin: 10px;">
-                <h3 style="text-align: center;">KERALA BLOCKCHAIN ACADEMY</h3>
-                <h2
-                    style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 40px;text-align: center;">
-                    Certificate of Completion</h2>
-                <img src="../images/lap.png" style="height:120px;width:150px;padding-left:510px;">
+            <img src="../images/sidebg.png" class="h-40 w-full">
+            <div class="m-10">
+                <h3 class="text-center">KERALA BLOCKCHAIN ACADEMY</h3>
+                <h2 class="font-sans font-bold text-5xl text-center">Certificate of Completion</h2>
+                <img src="../images/lap.png" class="h-32 w-40 mx-auto">
                 <br>
-                <h3
-                    style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;text-align: center;">
-                    Congratulations!</h3>
+                <h3 class="text-center mt-4 font-serif">Congratulations!</h3>
 
-                <h3 style="font-size: 30px;text-align: center;font-family: Georgia, 'Times New Roman', Times, serif;">
-                    ANANDU RAVEENDRAN</h3>
-                <a>This certifies that ANANDU RAVEENDRAN has successfully completed BLOCKCHAIN ARCHITECT COURSE from
-                    KERALA
-                    BLOCKCHAIN ACADEMY on 22/04/2025</a>
+                <h3 class="text-5xl text-center font-serif" id="name"></h3>
+               
+                <p class="text-center">This certifies that <span id="name2" style="font-weight: 600;">name</span> has successfully completed <span id="course" style="font-weight: 600;">course</span> with <span id="grade" style="font-weight: 600;">grade</span> grade from KERALA BLOCKCHAIN ACADEMY on 22/04/2025</p>
             </div>
 
 
         </div>
     </div>
+    <script>
+        document.getElementById("name").innerHTML=localStorage.getItem("name")
+
+       document.getElementById("name2").innerHTML=localStorage.getItem("name")
+        document.getElementById("course").innerHTML=localStorage.getItem("course")
+       function printing(){
+        window.print()
+       }
+        document.getElementById("grade").innerHTML=localStorage.getItem("grade");
+    </script>
+
 </body>
 
 </html>
